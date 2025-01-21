@@ -47,7 +47,7 @@ Mirip seprti Network ACL, Security Group merupakan komponen firewall virtual yan
 
 Berikut Perbedaannnya : 
 
-| Aspek      |           | Network ACL                                     | Security Group                       |
+| Aspek                  | Network ACL                                     | Security Group                       |
 | ---------------------- | ----------------------------------------------- | ------------------------------------ |
 | Cakupan                | Tingkat Subnet                                  | Tingkat instance (misalnya, EC2)     |
 | Sifat                  | Stateless(tidak mengingat status paket)         | Stateful (mengingat status paket)    |
