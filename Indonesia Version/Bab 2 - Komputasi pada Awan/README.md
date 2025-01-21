@@ -32,7 +32,7 @@ a. General Purpose Instance (Instance Tujuan Umum)
 
 Tipe yang seimbang untuk pengelolaan sumber daya komputasi, memori, dan jaringan.Digunakan untuk berbagai beban kerja umum yang beragam, seperti aplikasi web, dll.
 
-b.  Compute Optimized Instances (Instance Teroptimasi untuk Komputasi)
+b. Compute Optimized Instances (Instance Teroptimasi untuk Komputasi)
 
 Tipe instance ini idela untuk komputasi yang instensif dan berpusat pada prosessor dengan performa tinggi, seperti HPC(High Performance Computing/ Komputasi Performa Tinggi), atau server game.
 
