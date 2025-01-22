@@ -57,13 +57,30 @@ Dan jika diperhatikan, Amazon S3 terlihat mirip dengan Amazon EBS, tetapi tetap 
 
 Amazon EFS adalah sistem file yang dapat di kelola dan di skalakan, digunakan oleh layanan AWS Cloud dan sumber daya di data center on-premise. Amazon EFS memungkinkan beberapa klien (seperti pengguna, aplikasi, atau server) untuk mengakses data yang sama secara bersamaan. Ini adalah solusi penyimpanan file yang ideal untuk kasus penggunaan di mana banyak sumber daya perlu mengakses data yang sama pada waktu yang bersamaan.
 
-Amazon EFS adalah sistem file yang memungkinkan banyak instance (seperti EC2) mengakses data yang sama secara bersamaan.
+Amazon EFS adalah sistem file yang memungkinkan banyak instance (seperti EC2) mengakses data yang sama secara bersamaan. Kapasitas penyimpanan dapat menyesuaikan secara otomatis (scaling up dan down) sesuai kebutuhan, bahkan hingga petabyte. Data disimpan di beberapa Availability Zone (AZ) dalam satu Region, memastikan ketersediaan dan keandalan tinggi.
+
+Perbedaan dengan Amazon EBS
+
+a. Amazon EBS
+
+- Adalah block storage yang dilampirkan ke satu EC2 instance.
+- Hanya tersedia di satu Availability Zone (AZ).
+- Tidak dapat diakses oleh beberapa instance secara bersamaan.
+- Tidak melakukan scaling otomatis; kapasitas harus disesuaikan manual.
+
+b. Amazon EFS
+
+- Adalah file storage yang dapat diakses oleh banyak instance secara bersamaan.
+- Tersedia di beberapa AZ dalam satu Region.
+- Melakukan scaling otomatis sesuai kebutuhan.
+- Cocok untuk penggunaan bersama (shared access).
 
 ### 5.4 Amazon Relational Database Service (Amazon RDS)
 
 Amazon Relational Database Service (Amazon RDS) adalah layanan database terkelola (managed database service) yang disediakan oleh AWS. Layanan ini memudahkan pengguna untuk menyiapkan, mengoperasikan, dan mengelola database relasional di cloud. 
 
 Amazon RDS adalah layanan yang terkelola dan mendukung 6 (enam) mesin database, di antaranya:
+
 - Amazon Aurora
 - PostgreSQL
 - MySQL
@@ -71,3 +88,99 @@ Amazon RDS adalah layanan yang terkelola dan mendukung 6 (enam) mesin database, 
 - Oracle Database
 - Microsoft SQL Server
 
+Fitur fitur yang ada di Amazon RDS :
+
+- Automated patching : memperbaiki masalah dengan memperbarui program
+- Backup : pencadangan.
+- Redundancy : memiliki lebih dari satu instance untuk berjaga-jaga jika instance utama gagal beroperasi.
+- Failover : instance lain akan mengambil alih saat instance utama mengalami kegagalan.
+- Disaster recovery : memulihkan pascabencana.
+- Encryption at rest : enkripsi data saat disimpan.
+- Encryption in-transit : enkripsi data saat sedang dikirim dan diterima.
+
+### 5.5 Amazon DynamoDB
+
+Amazon DynamoDB adalah layanan database NoSQL terkelola dan serverless yang dirancang untuk kinerja tinggi, skalabilitas otomatis, dan ketersediaan tinggi. Jadi, mirip seperti Anazon RDS tetapi jika RDS menggunakan sistem SQL, di Amazon DynamoDB menggunakan NoSQL.
+
+Berikut perbedaannya dengan Database Relasional (Amazon RDS)
+
+a. Amazon RDS
+
+- Menggunakan model relasional (SQL) dengan skema tetap.
+- Cocok untuk analisis data kompleks dan hubungan antar tabel.
+- Memerlukan manajemen skema dan scaling manual.
+
+b. Amazon DynamoDB
+
+- Menggunakan model NoSQL (key-value) tanpa skema tetap.
+- Ideal untuk data fleksibel dan aplikasi yang membutuhkan kinerja tinggi.
+- Scaling otomatis dan tidak perlu manajemen infrastruktur.
+
+### 5.6 Amazon Redshift
+
+Amazon Redshift adalah layanan data warehouse terkelola oleh AWS yang dirancang untuk analitik big data. Data Warehouse adalah tempat yang dirancang khusus untuk analitik historis dan big data.
+
+Mungkin bertanya, mengapa tidak menggunakan relasional, mungkin bia dilihat perbedaan dengan Amazon RDS :
+
+a. Database Relasional (RDS)
+
+- Cocok untuk operasi read/write real-time.
+- Tidak ideal untuk analitik historis atau big data.
+
+b. Amazon Redshift
+
+- Dirancang untuk analitik big data dan business intelligence.
+- Menangani kueri kompleks pada data historis yang tidak berubah.
+
+### 5.7 AWS Database Migration Service
+
+AWS Database Migration Service merupakan layanan AWS yang bisa digunakan apabila sebelumnya sudah memiliki database on-premise atau priovider cloud lain dan ingin migrasi dari sistem on-premise atau provider cloud lain ke sistem AWS. AWS Database Migration Service mendukung sistem SQL (relasional), dan NoSQL (non relasional).
+
+Dengan menggunakan AWS Database Migration Service, dapat diperhatikan :
+
+- Database sumber tetap beroperasi selama proses migrasi.
+- Downtime diminimalkan untuk aplikasi yang bergantung pada database tersebut.
+- Database sumber dan target tidak harus bertipe sama.
+
+Pada AWS Database Migration Service memiliki beberapa jenis migrasi :
+
+a. Migrasi Homogen
+
+- Database sumber dan target bertipe sama (contoh: MySQL ke Amazon RDS for MySQL).
+- Prosesnya mudah karena struktur skema dan tipe data sama.
+
+b. Migrasi Heterogen
+
+- Database sumber dan target bertipe berbeda (contoh: Oracle ke Amazon Aurora).
+- Menggunakan AWS Schema Conversion Tool untuk mengubah skema dan tipe data sebelum migrasi.
+
+Dan dengan menggunakan migrasi AWS, anda bisa mendapat keunggulan AWS DMS berupa :
+- Migrasi Aman dan Cepat : Proses migrasi berjalan lancar dengan downtime minimal.
+- Replikasi Berkelanjutan: Mendukung replikasi data untuk disaster recovery atau pemisahan geografis.
+- Fleksibilitas: Bisa digunakan untuk migrasi, konsolidasi database, atau replikasi.
+
+### 5.8 Layanan AWS Lainnya
+
+1. Amazon DocumentDB
+
+Layanan database dokumen yang kompatibel dengan MongoDB, cocok untuk manajemen konten, katalog, atau profil pengguna.
+
+2. Amazon Neptune
+
+Layanan graph database untuk aplikasi dengan data yang sangat terhubung, seperti jejaring sosial, rekomendasi, atau deteksi penipuan.
+
+3. Amazon Managed Blockchain
+
+Layanan untuk membuat dan mengelola jaringan blockchain terdesentralisasi, ideal untuk rantai pasokan atau catatan finansial yang aman.
+
+4. Amazon Quantum Ledger Database (Amazon QLDB)
+
+Database ledger terpusat yang tidak dapat diubah, cocok untuk audit transaksi yang dapat diverifikasi.
+
+5. Amazon ElastiCache
+
+Layanan caching untuk meningkatkan performa baca database dengan Redis atau Memcached.
+
+6. Amazon DynamoDB Accelerator (DAX) 
+ 
+1Lapisan caching khusus untuk DynamoDB yang mempercepat waktu baca data nonrelasional.
