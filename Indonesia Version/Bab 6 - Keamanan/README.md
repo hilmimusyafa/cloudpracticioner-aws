@@ -56,9 +56,114 @@ IAM Roles digunakan untuk memberikan izin sementara kepada user, aplikasi, atau 
 
 ### 6.3 AWS Organizations
 
+AWS Organizations merupakan layanan yang memungkinkan mengelola beberapa akun AWS swcara terpusat. Dengan AWS Organizations dapat melakukan :
 
+- Manajemen Terpusat : Menggabungkan dan mengelola banyak akun AWS dalam satu organisasi.
+- Consolidated Billing : Menggabungkan tagihan dari semua akun anggota ke satu akun utama, termasuk diskon massal.
+- Pengelompokan Hierarki Akun : Membuat Organizational Units (OU) untuk mengelompokkan akun berdasarkan departemen, keamanan, atau kebutuhan bisnis. Policy yang diterapkan ke OU akan diwarisi oleh semua akun di dalamnya.
+- Kontrol Layanan dan API: Menggunakan Service Control Policies (SCP) untuk membatasi layanan AWS dan tindakan API yang dapat diakses oleh akun anggota.
+
+Contoh Kasus :
+
+Jika memiliki akun terpisah untuk departemen Keuangan, IT, HR, dan Hukum. Dengan AWS Organizations :
+
+- Keuangan dan IT dapat dikelola langsung di organisasi tanpa OU.
+- HR dan Hukum dikelompokkan dalam OU yang sama, memungkinkan penerapan policy yang seragam untuk keduanya.
+
+Dengan AWS Organizations, dapat menyederhanakan manajemen akun, meningkatkan keamanan, dan mengoptimalkan biaya.
 
 ### 6.4 Compliance (Kepatuhan)
 
+Compliance (Kepatuhan) di AWS mengacu pada pemenuhan standar dan regulasi industri yang berlaku, seperti GDPR (Uni Eropa) atau HIPAA (AS). AWS menyediakan infrastruktur yang memenuhi berbagai standar compliance global, regional, dan industri, sehingga dapat fokus pada memenuhi persyaratan compliance di sisi arsitektur aplikasi.
+
+Layanan AWS untuk Compliance 
+
+1. AWS Artifact
+
+Menyediakan akses ke laporan compliance dan perjanjian online yang membuktikan kepatuhan AWS terhadap standar keamanan dan regulasi. AWS Artifact terdiri dari :
+
+- AWS Artifact Agreements : Untuk meninnjau dan mendatangani perjanjian terkait penggunaan layanan AWS.
+- AWS Artifact Reports : Menyediakan laporan audit dari pihak ketiga yang memverifikasi kepatuhan AWS.
+
+2. Customer Compliance Center
+
+Menyediakan informasi, contoh kasus, whitepaper, dan checklist audit untuk membantu memahami dan memenuhi persyaratan compliance.
+
 ### 6.5 Denial-of-Service
+
+Denial-of-Service atau Distirbuted Denial-of-Service (DDoS) merupakan upaya serangan untuk membuat website atau aplikasi menjadi tidak bekerja dengan optimal bagi pengguna yang dilakukan secara sengaja. 
+
+Biasanya penyerang dengan teknik Denial-of-Service atau Distributed Denial-of-Service akan menggunakan skenario memperbanyak request palsu ke sebuah server, jadi server tersebut akan bekerja lebih untuk melayanai request itu. Padahal request itu palsu, sehingga performa server akan menurun.
+
+Bedanya Denial-of-Service (DoS) dan Distributed Denial-of-Service (DDoS) :
+
+1. DoS (Denial-of-Service) 
+
+Serangan dari satu sumber yang membanjiri aplikasi dengan traffic, membuatnya tidak bisa melayani pengguna asli.
+
+2. DDoS (Distributed Denial-of-Service)
+
+Serangan dari banyak sumber (biasanya menggunakan bot) yang membanjiri aplikasi dengan traffic masif.
+
+Jenis Serangan DDoS :
+
+1. UDP Flood 
+
+UDP Flood merupakan Membanjiri server dengan data besar menggunakan protokol UDP (misalnya, data cuaca palsu).
+Solusi: Gunakan Security Group untuk memblokir traffic yang tidak sah.
+
+2. HTTP Level Attack
+
+HTTP Level Attack merupakan penyerang mengirim permintaan HTTP berulang (misalnya, pencarian produk) untuk membebani server.
+Solusi: Gunakan AWS WAF (Web Application Firewall) untuk memfilter traffic berbahaya.
+
+3. Slowloris Attack
+
+Slowloris Attack merupakan Penyerang membuat koneksi lambat ke server, menghabiskan kapasitas server.
+Solusi: Gunakan Elastic Load Balancer (ELB) untuk menangani traffic dan mencegah server kewalahan.
+
+Solusi AWS untuk sesorang DDoS :
+
+1. AWS Shield
+
+- AWS Shield Standard : Perlindungan dasar DDoS gratis untuk semua pelanggan AWS.
+- AWS Shield Advanced: Layanan berbayar untuk perlindungan DDoS yang lebih canggih, termasuk diagnostik dan mitigasi serangan kompleks.
+
+2. Elastic Load Balancer (ELB) 
+
+Menangani traffic secara efisien dan mencegah server kewalahan.
+
+3. AWS MAF 
+
+Memfilter traffic berbahaya dan melindungi aplikasi dari eksploitasi web.
+
+### 6.6 Layanan Tambahan
+
+1. Enkripsi Data
+
+- Enkripsi at Rest : Melindungi data yang disimpan (misalnya, di DynamoDB) dengan mengubahnya menjadi kode yang tidak terbaca. AWS menggunakan AWS Key Management Service (KMS) untuk mengelola kunci enkripsi.
+
+- Enkripsi in Transit : Melindungi data saat berpindah antara layanan AWS dan klien menggunakan protokol seperti SSL/TLS.
+
+2. AWS Key Management Service (KMS)
+
+- Layanan untuk membuat dan mengelola kunci kriptografi yang digunakan untuk enkripsi dan dekripsi data.
+
+- Memungkinkan kontrol akses terhadap kunci, seperti menentukan IAM users/roles yang dapat mengelola kunci atau menonaktifkan kunci sementara.
+
+3. AWS Web Application FIrewall (WAF)
+
+- Melindungi aplikasi web dari serangan dengan memfilter lalu lintas berbahaya.
+
+- Menggunakan Web ACL untuk memblokir atau mengizinkan permintaan berdasarkan aturan yang Anda tentukan, seperti memblokir alamat IP tertentu.
+
+4. Amazon Inspector
+
+- Layanan otomatis yang memindai aplikasi dan infrastruktur untuk menemukan kerentanan keamanan atau penyimpangan dari praktik terbaik.
+- Memberikan laporan temuan keamanan yang diprioritaskan beserta rekomendasi perbaikan.
+
+5. Amazon GuardDuty 
+
+- Layanan deteksi ancaman cerdas yang memantau aktivitas jaringan dan akun AWS untuk mengidentifikasi ancaman seperti alamat IP berbahaya atau perilaku mencurigakan.
+- Menggunakan machine learning dan threat intelligence untuk memberikan rekomendasi tindakan berdasarkan temuan.
 
