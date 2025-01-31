@@ -29,9 +29,7 @@ Untuk melihat lengkap terkait Free Tier, dapat dilihat di website resmi AWS.
 Konsep harga AWS memiliki beberapa model penagihan : 
 
 - Pay for What You Use :  Di AWS, penagihan berdasarkan seberapa lama layanan/ sumber daya itu digunakan. Penagihan ini sangat strategis, karena tak perlu komitmen jangka panjang, cukup apa yang digunakan saja.
-
 - Pay Less When Your Reverse : Beberpaa layanan menawarkan reservasi (Savings Plans) yang dapat menghemat hingga 72% dibanfingkan tarif on-demand. Cocok untuk beban kerja yang berjalan terus.
-
 - Pay Less with Volume-based Discounts When You Use More : Semakin banyak menggunakan layanan tertent, semakin murah biaya per unitnya. Contoh, misal menggunakan Amazon S3, semakin sering digunakan maka semakin murah biayanya (per unit).
 
 ### 8.3 AWS Pricing Calculator 
@@ -77,19 +75,19 @@ Maka dari itu, AWS menyediakan layanan AWS Cost Explorer, layanan berbasis konso
 
 Jika bingung untuk menentukan infratruktur layanan AWS, AWS menawarkan 4 paket dukungan untuk memenuhi kebutuhan bisnis, mulai dari skala kecil hingga besar : 
 
-1. Basic Support (Gratis):
+1. Basic Support (Gratis)
 
 - Akses 24/7 ke customer service.
 - Dokumentasi, whitepaper, dan forum dukungan.
 - AWS Trusted Advisor dan Personal Health Dashboard.
 
-2. Developer Support :
+2. Developer Support
 
 - Semua fitur Basic Support.
 - Layanan diagnostik klien, panduan praktik terbaik, dan dukungan arsitektur dasar.
 - Respons email dalam 24 jam (kurang dari 12 jam untuk gangguan sistem).
 
-3. Business Support :
+3. Business Support
 
 - Semua fitur Basic dan Developer Support.
 - Akses penuh ke AWS Trusted Advisor.
@@ -97,7 +95,7 @@ Jika bingung untuk menentukan infratruktur layanan AWS, AWS menawarkan 4 paket d
 - Infrastructure Event Management (biaya tambahan).
 - Panduan kasus penggunaan dan dukungan terbatas untuk perangkat lunak pihak ketiga.
 
-4. Enterprise Support :
+4. Enterprise Support
 
 - Semua fitur paket sebelumnya.
 - SLA 15 menit untuk masalah kritis.
@@ -106,3 +104,14 @@ Jika bingung untuk menentukan infratruktur layanan AWS, AWS menawarkan 4 paket d
 
 AWS menyelesaikan masalah sesuai dengan fokus AWS pada 5 pilar : Operational Excellence, Security, Reliability, Performance Efficiency, dan Cost Optimization.
 
+### 8.9 AWS Marketplace
+
+AWS Marketplace merupakan sebuah tempat untuk memasang ribuan perangkat lunak atau ekstensi external dari berbagai vendor agar berada di lingkungan AWS. Fitur fiturnya adalah :
+
+- Kemudahan Penggunaan : Temukan, uji, dan beli software pihak ketiga dengan one-click deployment.
+- Informasi Lengkap : Akses detail harga, dukungan, dan ulasan pelanggan.
+- Fleksibilitas Pembayaran : Opsi pay-as-you-go, free trials, dan paket Quick Start.
+- Kategori Beragam : Infrastructure Software, Business Applications, Data & Analytics, DevOps, dll.
+- Solusi Spesifik : Jelajahi solusi berdasarkan industri (misalnya, kesehatan) dan kasus penggunaan (seperti analisis data medis atau prediksi risiko kesehatan).
+
+AWS Marketplace memudahkan untuk mengintegrasikan aplikasi pihak ketiga tanpa perlu membangun infrastruktur dari awal.

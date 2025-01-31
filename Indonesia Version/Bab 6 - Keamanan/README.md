@@ -142,19 +142,16 @@ Memfilter traffic berbahaya dan melindungi aplikasi dari eksploitasi web.
 1. Enkripsi Data
 
 - Enkripsi at Rest : Melindungi data yang disimpan (misalnya, di DynamoDB) dengan mengubahnya menjadi kode yang tidak terbaca. AWS menggunakan AWS Key Management Service (KMS) untuk mengelola kunci enkripsi.
-
 - Enkripsi in Transit : Melindungi data saat berpindah antara layanan AWS dan klien menggunakan protokol seperti SSL/TLS.
 
 2. AWS Key Management Service (KMS)
 
 - Layanan untuk membuat dan mengelola kunci kriptografi yang digunakan untuk enkripsi dan dekripsi data.
-
 - Memungkinkan kontrol akses terhadap kunci, seperti menentukan IAM users/roles yang dapat mengelola kunci atau menonaktifkan kunci sementara.
 
 3. AWS Web Application FIrewall (WAF)
 
 - Melindungi aplikasi web dari serangan dengan memfilter lalu lintas berbahaya.
-
 - Menggunakan Web ACL untuk memblokir atau mengizinkan permintaan berdasarkan aturan yang Anda tentukan, seperti memblokir alamat IP tertentu.
 
 4. Amazon Inspector
