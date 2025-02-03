@@ -1,76 +1,27 @@
-## Bab 2 : Komputasi pada Awan
+## Bab 2 : Perkenalan Amazon Web Service (AWS)
 
-### 2.1 Pengantar Komputasi di Awan dengan AWS Elastic Compute Cloud (Amazon EC2)
+### 2.1 Apa itu Amazon Web Service (AWS)?
 
-Komputasi di awan yang bekerja untuk menjadi server dari aplikasi atau layanan perlu komputasi dengan kemampuan yang cepat, AWS tahu atas hal tersebut, dan disitulah AWS menyediakan layanan cloud dengan AWS Elastic Compute Cloud (Amazon EC2) dan disini penulis mendokumentasikannya.
+Amazon Web Service atau AWS adalah salah satu layanan penyedia komputasi cloud yang merupakan milik perusahaan IT di Amerika, yaitu Amazon. 
+
+Dengan AWS ini, membuat infrastruktur menjadi mudah, bisa menjadi Web Server, Database Server, dan masih banyak lagi.
+
+### 2.2 AWS dan Cloud Computing
+
+Komputasi di awan yang bekerja untuk menjadi server dari aplikasi atau layanan perlu komputasi dengan kemampuan yang cepat, maka dari itu ada AWS EC2.
 
 AWS Elastic Compute Cloud (Amazon EC2) adalah layanan komputasi awan yang disediakan oleh Amazon dengan harapan memberikan kapasitas komputasi untuk menjalankan aplikasi dan menyediakan daya komputasi sesuai kebutuhan bisnis.
 
-Di AWS, server tersebut berbentuk virtual, dan layanan yang dapat di gunakan untuk mendapatkan akses ke server virtual tersebut disebut dengan Amazon EC2. Dengan menggunakan layanan EC2, shingga memiliki kapasitas komputasi yang fleksibel, hemat biaya, dan cepat dibandingkan dengan menjalankan server sendiri di data center on-premise. Bagian virtual pada server tersebutlah disebut Instance.
+Di AWS, server tersebut berbentuk virtual, dan layanan yang dapat di gunakan untuk mendapatkan akses ke server virtual tersebut disebut dengan Amazon EC2. 
 
-Coba bayangkan jika menggenakan On-Premise : 
+Dengan menggunakan layanan EC2, sehingga memiliki kapasitas komputasi yang fleksibel, hemat biaya, dan cepat dibandingkan dengan menjalankan server sendiri di data center on-premise. Bagian virtual pada server tersebutlah disebut Instance.
 
-1. Pertama, harus melakukan banyak riset untuk mengetahui jenis server apa yang ingin dibeli dan berapa banyak yang diperlukan.
-2. Setelah itu,  membelinya dengan biaya di muka yang cukup menguras kantong. Lalu masuklah ke proses yang memakan waktu, yait mesti menunggu beberapa minggu atau bahkan berbulan-bulan sampai server tersebut tersedia untuk.
-3. Anggaplah server tersebut sudah tiba di bangunan data center yang miliki atau sewa.
-4. Langkah selanjutnya, perlu memasang, menyusun, dan menghubungkan semuanya.
-Kemudian, pastikan server-server tersebut aman dan menyala dengan baik, barulah mereka siap untuk digunakan.
+### 2.3 Tipe Instance Amazon EC2
 
-Dan jika menggenakan AWS EC2 :
-
-1. Luncurkan, Mulailah dengan memilih sebuah template dengan konfigurasi dasar untuk instance. Konfigurasi dasar ini termasuk sistem operasi, server aplikasi, atau aplikasi lainnya. Juga dapat memilih tipe instance, yaitu konfigurasi perangkat keras tertentu dari instance. Jangan lupa, untuk mengautur konfigurasi keamananan dan pengontrol lalu lintas data.
-2. Hubungkan, Program dan aplikasi memiliki beberapa metode berbeda untuk terhubung dan bertukar data langsung ke instance, dapat terhubung juga ke instance dengan mengaksesnya dari desktop.
-3. Gunakan, setelah terhubung ke instance dapat mulai digunnakan. Ada banyak hal yang bisa dilakukan dengan Amazon EC2 instance, seperti menginstal perangkat lunak, menambah penyimpanan, menyalin dan mengatur file, dll.
-
-Dengan adanya AWS EC2 ini, dapat terbantu dalam menentukan dan menjalankan server, cukup Luncurkan, Hubungkan, dan Gunakan dan server pun siap!
-
-### 2.2 Tipe Instance Amazon EC2
-
-Sebelumnya sudah di sebutkan untuk terkait dasar AWS EC2 yang dimana salah satunya terkait instance, kali ini terkait pengelompokkan instance, yaitu :
-
-a. General Purpose Instance (Instance Tujuan Umum)
-
-Tipe yang seimbang untuk pengelolaan sumber daya komputasi, memori, dan jaringan.Digunakan untuk berbagai beban kerja umum yang beragam, seperti aplikasi web, dll.
-
-b. Compute Optimized Instances (Instance Teroptimasi untuk Komputasi)
-
-Tipe instance ini idela untuk komputasi yang instensif dan berpusat pada prosessor dengan performa tinggi, seperti HPC(High Performance Computing/ Komputasi Performa Tinggi), atau server game.
-
-c. Memmory COmputing Instances (Insteance Terakselerasi untuk Komputasi)
-
-Tipe instance ini menggunakan perangkat keras akselerator untuk menjalankan beberapa fungsi secara lebih efisien dibanding dengan yang berjalan pada CPU. Contoh : Pemrosesan Grafik, dan Data Pattern Matching. (Pencocokan Pola Data)
-
-d. Storage Optimized Instance (Instance Teroptimasi untuk Penyimpanan)
-
-Tipe instance yang di optimisasi untuk beban kerja yang banyak dan berurutan di penyimapanan lokal, dan mennggunakan akses baca (read) dan tulis (write) yang banyak.
-
-### 2.3 Harga Amazon EC2
-
-AWS memiliki beberapa pilihan penagihan terkait Amazon EC2. Di antaranya adalah:
-
-a. On-Demand (Sesuai Permintaan)
-
-Opsi pembayaran yang dimana membayar selama instance berjalan (bisa per detik atau per jam) tergantung pada tipe instance, dan sistem operasi yang dipilih. Sangat ideal untuk penggunaan jangka pendek, seperti pengembangan dan pengujian aplikasi, dan beban kerja yang tidak dapat di prediksi.
-
-Tak perlu kontrak, perjanjian jangka panjang, bayar dimuka atau kontak AWS, cukup langsunge penagihan sekali.
-
-b. Saving Plans (Rencana Tabungan)
- 
-Saving Plans memungkinkan pengurangan biaya komputasi dengan komitmen terhadap waktu yang keluar dan penggunaan yang konsisten dalam jangka 1 tahun atau 3 tahun. Selain itu tarif On-demand biasa.
-
-Oleh karena itu, model penetapan harga ini dapat memberikan penghematan hingga 72% pada penggunaan komputasi AWS terlepas dari instance family (keluarga instance), ukuran, OS, tenancy (penyewaan), atau region AWS.
-
-c. Reserved Instances (Instance Terpesan)
-
-Reserved Instanced menawarkan diskon penagihan yang diterapkan untuk instance On-Deman dengan adanya komitmen tingkat penggunaan untuk jangka waktu 1 atau 3 tahun.
-
-d. Spot Instances (Instance Spot)
-
-Spot Instances menggunakan kapasitas komputasi yang tak terpakai dan menawarkan penghematan biaya hingga 90% dari harga On-Demand, ideal untuk beban kerja mulai dan akhir yang fleksibel dan tak masalah dengan interupsi.
-
-e. Dedicated Hosts (Host Khusus)
-
-Dedicated Hosts merupakan server EC2 fisik yang bisa digunakan secara full, pilihan ini tidak ada orang lain yang akan berbagi sewa dari server fisik tersebut.
+- General Purpose Instance (Instance Tujuan Umum) : Digunakan untuk berbagai beban kerja umum yang beragam, seperti aplikasi web, dll.
+- Compute Optimized Instances (Instance Teroptimasi untuk Komputasi) : biasa di gunakan di HPC (High Performance Computing/ Komputasi Performa Tinggi), atau server game.
+- Memmory Computing Instances (Instance Terakselerasi untuk Komputasi) : biasa di gunakan untuk Pemrosesan Grafik, dan Data Pattern Matching. (Pencocokan Pola Data)
+- Storage Optimized Instance (Instance Teroptimasi untuk Penyimpanan) : biasa di penyimapanan lokal, dan mennggunakan akses baca (read) dan tulis (write) yang banyak.
 
 ### 2.4 Penyesuaian Kapasitas Amazon EC2
 
@@ -86,7 +37,7 @@ Nah, jika di skenario tersebut menggunakan data center on-premise, akan ribet un
 
 Amazon EC2 Auto Scaling? Apa itu? Ya, Amazon EC2 Auto Scaling adalah fitur AWS yang memudahkan untuk menambah atau menghapus Amazon EC2 instances secara ototmattis sesuai kebutuhan, jadi aplikasi akan selalu ada. 
 
-Conmtoh skenario yang ada di website e-commerece pada promo tanggal dan bulan sama. Jika server e-commerce itu kweawalahan akan melayani client yany banyak, bahkan hingga client merasa website atau aplikasi menunjukkan error atau timeout, nah dengan kasus itu server harus di tingkatkan dengan ekspansi performa, untuk melakukan itu secara mudah, bisa menggunakan Amazon EC2 Auto Scaling, sehingga server otomatis akan terexpand performa dan beban kerjanya.
+Contoh skenario yang ada di website e-commerece pada promo tanggal dan bulan sama. Jika server e-commerce itu kewalahan akan melayani client yany banyak, bahkan hingga client merasa website atau aplikasi menunjukkan error atau timeout, nah dengan kasus itu server harus di tingkatkan dengan ekspansi performa, untuk melakukan itu secara mudah, bisa menggunakan Amazon EC2 Auto Scaling, sehingga server otomatis akan terexpand performa dan beban kerjanya.
 
 Pada Amazon EC2 Auto Scaling ada dua pendekatan :
 - Dynamic Scaling, yaitu merespons jika ada perubahan permintaan.
@@ -127,7 +78,6 @@ Merupakan proses pengiriman pesan antar komponen aplikasi.Bertujuan memungkinkan
 Penyimpanan sementara pesan dalam antrean (queue) sebelum diproses oleh komponen penerima.Bertujuan Memastikan pesan tidak hilang dan dapat diproses saat komponen penerima siap.
 Pesan disimpan dalam antrean sampai Aplikasi B siap memprosesnya.
 
-
 ### 2.7 Komputasi Serverless
 
 Serverless adalah sebuah konsep pengembangan sistem di mana developer atau pengembang hanya fokus pada penulisan kode aplikasi tanpa perlu mengelola atau mengkonfigurasi infrastruktur server secara manual. Dalam arsitektur serverless, penyedia layanan cloud (seperti AWS) bertanggung jawab penuh atas penyediaan, pengelolaan, dan penskalaan infrastruktur yang diperlukan untuk menjalankan kode tersebut. 
@@ -165,7 +115,6 @@ Merupakan layanan terkelola untuk menjalankan Kubernetes di AWS. Kubernetes adal
 c. AWS Fargate
 
 Platform komputasi serverless untuk ECS dan EKS. Anda tidak perlu mengelola EC2 instance; AWS Fargate mengelola infrastruktur untuk Anda. Anda hanya membayar sumber daya yang digunakan untuk menjalankan container. Jaddi yang ini seperti Serverless, tapi container-based server.
-
 
 
 
